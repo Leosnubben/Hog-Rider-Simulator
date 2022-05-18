@@ -8,6 +8,11 @@ public class Musik : MonoBehaviour
     public AudioClip[] clipQueue;
     int currentSong = 0;
 
+    private void Start()
+    {
+        audioSource.Play();
+    }
+
     void Update()
     {
         if (audioSource.isPlaying == false)
