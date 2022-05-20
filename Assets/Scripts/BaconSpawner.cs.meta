@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 52b1dd0c4a9daad47b398975def89742
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BaconPrefab: {fileID: 8868696346546310755, guid: 6cfc00ff36406f94c8341251b191420f, type: 3}
+  - BaconVariant: {fileID: 8868696346546310755, guid: 6cfc00ff36406f94c8341251b191420f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,22 +5,22 @@ using UnityEngine;
 public class Musik : MonoBehaviour
 {
     public AudioSource audioSource;
-    public AudioClip[] clipQueue;
-    int currentSong = 0;
+    public AudioClip[] clipQueue; //Lista med låtar - Leo
+    int currentSong = 0;  //Börjar på låt 1 - Leo
 
     private void Start()
     {
-        audioSource.Play();
+        audioSource.Play(); //Spelar låten - Leo
     }
 
     void Update()
     {
-        if (audioSource.isPlaying == false)
+        if (audioSource.isPlaying == false) //Om ingenting spelas - Leo
         {
-            currentSong++;
-            if (currentSong == clipQueue.Length)
+            currentSong++; //spela nästa låt - Leo
+            if (currentSong == clipQueue.Length) //Om vid slutet av listan - Leo
             {
-                currentSong = 0;
+                currentSong = 0; //spela första låten - Leo
             }
 
 

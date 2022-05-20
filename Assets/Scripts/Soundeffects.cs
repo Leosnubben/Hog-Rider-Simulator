@@ -31,5 +31,5 @@ public class Soundeffects : MonoBehaviour
         {
             source.PlayOneShot(ScreamThree);
         }
-    }
+    }   //Man väljer vad för ljud och så spelar den ljudet när man trycker på respektive knapp - Leo
 }
