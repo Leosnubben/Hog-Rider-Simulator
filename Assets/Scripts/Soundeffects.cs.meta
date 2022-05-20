@@ -3,7 +3,10 @@ guid: 3c68429aaec7e2c458ab1fe01586e99b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ScreamOne: {fileID: 8300000, guid: 6ba1e9a4ebcc6754fab5bf01259986b6, type: 3}
+  - ScreamTwo: {instanceID: 0}
+  - ScreamThree: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
