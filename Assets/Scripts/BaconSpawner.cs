@@ -16,7 +16,7 @@ public class BaconSpawner : MonoBehaviour
         if (timer > timerlimit) //Om det har gått längre tid än timern - Leo
         {
             timer = 0;
-            GameObject bacon = Instantiate(BaconVariant, new Vector3(Random.Range(0, 20), 2000, Random.Range(0, 20)), BaconVariant.transform.rotation);
+            GameObject bacon = Instantiate(BaconVariant, new Vector3(Random.Range(0, 600), 2000, Random.Range(0, 600)), BaconVariant.transform.rotation);
             RaycastHit hit;
             Physics.Raycast(bacon.transform.position, -Vector3.up, out hit);
             if (hit.transform != null)
