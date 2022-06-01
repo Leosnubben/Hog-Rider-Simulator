@@ -12,7 +12,7 @@ public class BaconSpawner : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < 20000; i++)
+        for (int i = 0; i < 500; i++)
         {
             SpawnBacon();
         }
