@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        GroundDistance = GetComponent<CharacterController>().bounds.extents.y; //referens till charactercontroller. -Ludvig
+        GroundDistance = GetComponent<CharacterController>().bounds.extents.y;
 
     }
 
@@ -32,19 +32,17 @@ public class PlayerMovement : MonoBehaviour
 
         cc.Move(move * speed * Time.deltaTime);
 
-       Velocity.y += gravity * Time.deltaTime;
-
-        Velocity.y = Mathf.Clamp(0, -1, -9);// stoppar velocity y från att överskrida -9 i gravitation. - lUdvig
+        Velocity.y += gravity * Time.deltaTime;
 
         cc.Move(Velocity * Time.deltaTime);
 
-        if (!Physics.Raycast(transform.position, Vector3.up, GroundDistance + 0.1f)) //raycast som gör en groundcheck och kollar om spelaren är på marken eller inte. -Ludvig
+        if (!Physics.Raycast(transform.position, -Vector3.up, GroundDistance + 0.1f)) //raycast som gör en groundcheck och kollar om spelaren är på marken eller inte. -Ludvig
         {
-            isgrounded = true;
+            isgrounded = false;
         }
         else
         {
-            isgrounded = false;
+            isgrounded = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isgrounded) //Gör så du kan hoppa. -Ludvig

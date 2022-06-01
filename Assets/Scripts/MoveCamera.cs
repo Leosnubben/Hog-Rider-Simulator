@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour {
 
-    public float MouseSens = 20f;
+    public float MouseSens = 100f;
 
     float xRotation = 0f;
 
@@ -14,14 +14,14 @@ public class MoveCamera : MonoBehaviour {
     }
 
     void Update() {
-        float MouseX = Input.GetAxis("Mouse X") * MouseSens * Time.deltaTime; // gör så du kan flytta musen horizontelt. -Ludvig
-        float MouseY = Input.GetAxis("Mouse Y") * MouseSens * Time.deltaTime; // gör så du kan flytta musen verticalt. -Ludvig
+        float MouseX = Input.GetAxis("Mouse X") * MouseSens * Time.deltaTime;
+        float MouseY = Input.GetAxis("Mouse Y") * MouseSens * Time.deltaTime;
 
         xRotation -= MouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // clampar rotation så din sens inte blir för hög. -Ludvig
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f); 
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        PlayerBody.Rotate(Vector3.up * MouseX); //roterar kroppen med kameran. -Ludvig
+        PlayerBody.Rotate(Vector3.up * MouseX);
     }
 }
