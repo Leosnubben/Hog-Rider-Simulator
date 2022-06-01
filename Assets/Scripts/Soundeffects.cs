@@ -11,10 +11,10 @@ public class Soundeffects : MonoBehaviour
     [SerializeField]
     AudioClip ScreamTwo;
     [SerializeField]
-    AudioClip ScreamThree;
+    AudioClip ScreamThree;   //Så man kan välja vad för ljud som ska spelas - Leo
     private void Start()
     {
-        source = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();  //Gör så man spelar ljudet ur en audio source - Leo
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class Soundeffects : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            source.PlayOneShot(ScreamThree);
+            source.PlayOneShot(ScreamThree);  
         }
     }   //Man väljer vad för ljud och så spelar den ljudet när man trycker på respektive knapp - Leo
 }

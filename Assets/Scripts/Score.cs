@@ -17,6 +17,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoretext.text = "Score " + (playscore).ToString();  
+        scoretext.text = "Bacon " + (playscore).ToString();  //Den skriver bacon och sen den poängen man har - Leo
     }
 }
