@@ -51,4 +51,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "Bacon")
+        {
+            Score.playscore += 1;
+            Destroy(hit.gameObject);    //Om man kör in i en bacon så förstörs den och lägger till poäng - Leo
+        }
+    }
 }

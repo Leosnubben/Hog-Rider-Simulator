@@ -20,7 +20,7 @@ public class BaconMovement : MonoBehaviour
     {
         timer += Time.deltaTime;
         curve = Mathf.Sin(timer * baconSpeed) * 1;
-        child.localPosition = new Vector3(child.position.x, curve, child.position.z);
+        child.localPosition = new Vector3(0, curve, 0);
         child.Rotate(Vector3.forward, 0.2f);
     }
 }

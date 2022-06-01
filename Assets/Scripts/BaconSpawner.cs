@@ -10,31 +10,36 @@ public class BaconSpawner : MonoBehaviour
     [SerializeField]
     private GameObject BaconVariant;
 
+    private void Start()
+    {
+        for (int i = 0; i < 20000; i++)
+        {
+            SpawnBacon();
+        }
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
         if (timer > timerlimit) //Om det har gått längre tid än timern - Leo
         {
             timer = 0;
-            GameObject bacon = Instantiate(BaconVariant, new Vector3(Random.Range(0, 600), 2000, Random.Range(0, 600)), BaconVariant.transform.rotation);
-            RaycastHit hit;
-            Physics.Raycast(bacon.transform.position, -Vector3.up, out hit);
-            if (hit.transform != null)
-            {
-                bacon.transform.position = new Vector3(bacon.transform.position.x, hit.point.y + 1.2f, bacon.transform.position.z);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            SpawnBacon();
         }
     }
-    private void OnCollisionEnter(Collision collision)
+
+    void SpawnBacon()
     {
-        if (collision.gameObject.tag == "Player")
+        GameObject bacon = Instantiate(BaconVariant, new Vector3(Random.Range(0, 600), 2000, Random.Range(0, 600)), BaconVariant.transform.rotation);
+        RaycastHit hit;
+        Physics.Raycast(bacon.transform.position, -Vector3.up, out hit);
+        if (hit.transform != null)
         {
-            Score.playscore += 1;
-            Destroy(collision.gameObject);
+            bacon.transform.position = new Vector3(bacon.transform.position.x, hit.point.y + 1.5f, bacon.transform.position.z);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }
